@@ -1,0 +1,128 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@font-face {
+  font-family: "Bebas Neue";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/bebasneue/v14/JTUSjIg69CK48gW7PXoo9Wlhyw.woff2) format("woff2");
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 300 800;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/inter/v18/UcCO3FwrK3iLTeHuS_nVMrMxCp50ojIa1ZL7W0Q5n-wU.woff2) format("woff2");
+}
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --font-display: "Bebas Neue", "Inter", sans-serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+}
+
+:root {
+  --radius: 0.75rem;
+  /* CJ Sport Training brand */
+  --background: oklch(0.08 0.005 240);
+  --foreground: oklch(0.98 0 0);
+  --card: oklch(0.12 0.01 240);
+  --card-foreground: oklch(0.98 0 0);
+  --popover: oklch(0.12 0.01 240);
+  --popover-foreground: oklch(0.98 0 0);
+  --primary: oklch(0.72 0.18 240);          /* electric blue #2DA8FF */
+  --primary-foreground: oklch(0.08 0.005 240);
+  --secondary: oklch(0.18 0.01 240);
+  --secondary-foreground: oklch(0.98 0 0);
+  --muted: oklch(0.15 0.005 240);
+  --muted-foreground: oklch(0.72 0.005 240);
+  --accent: oklch(0.72 0.18 240);
+  --accent-foreground: oklch(0.08 0.005 240);
+  --destructive: oklch(0.6 0.22 25);
+  --destructive-foreground: oklch(0.98 0 0);
+  --border: oklch(0.22 0.01 240);
+  --input: oklch(0.18 0.01 240);
+  --ring: oklch(0.72 0.18 240);
+
+  --gradient-hero: radial-gradient(ellipse at top, oklch(0.18 0.08 240 / 0.6), transparent 60%);
+  --gradient-primary: linear-gradient(135deg, oklch(0.72 0.18 240), oklch(0.62 0.22 250));
+  --shadow-glow: 0 0 40px oklch(0.72 0.18 240 / 0.45);
+  --shadow-glow-lg: 0 10px 60px -10px oklch(0.72 0.18 240 / 0.6);
+  --shadow-card: 0 20px 60px -20px oklch(0 0 0 / 0.7);
+}
+
+@layer base {
+  * { border-color: var(--color-border); }
+  body {
+    background: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, .font-display {
+    font-family: var(--font-display);
+    letter-spacing: 0.02em;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .bg-grid {
+    background-image:
+      linear-gradient(oklch(0.72 0.18 240 / 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, oklch(0.72 0.18 240 / 0.06) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+  .glow { box-shadow: var(--shadow-glow); }
+  .glow-lg { box-shadow: var(--shadow-glow-lg); }
+  .glass {
+    background: oklch(0.14 0.01 240 / 0.5);
+    backdrop-filter: blur(14px);
+    border: 1px solid oklch(1 0 0 / 0.06);
+  }
+}
+
+@keyframes pulse-line {
+  0%, 100% { opacity: 0.4; transform: scaleX(1); }
+  50% { opacity: 1; transform: scaleX(1.02); }
+}
+.animate-pulse-line { animation: pulse-line 2.5s ease-in-out infinite; }
+
+@keyframes float-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-float-up { animation: float-up 0.8s ease-out both; }
