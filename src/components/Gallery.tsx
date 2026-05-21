@@ -27,12 +27,12 @@ export function Gallery() {
           <div className="col-span-6 row-span-2 group overflow-hidden rounded-2xl">
             <img src={hero} alt="Battle ropes" loading="lazy" className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-700" />
           </div>
-          <div className="col-span-3 row-span-2 group overflow-hidden rounded-2xl">
+          {/* <div className="col-span-3 row-span-2 group overflow-hidden rounded-2xl">
             <img src={g3} alt="Deadlift" loading="lazy" className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-700" />
           </div>
           <div className="col-span-3 row-span-2 group overflow-hidden rounded-2xl">
             <img src={g2} alt="Boxing" loading="lazy" className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-700" />
-          </div>
+          </div> */}
           <div className="col-span-12 row-span-2 group overflow-hidden rounded-2xl">
             <img src={g4} alt="Group class" loading="lazy" className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-700" />
           </div>

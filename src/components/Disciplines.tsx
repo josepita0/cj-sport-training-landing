@@ -1,5 +1,5 @@
 import functional from "@/assets/functional.jpg";
-import jiujitsu from "@/assets/jiujitsu.jpg";
+import jiujitsu from "@/assets/jiujitsu.png";
 import mma from "@/assets/mma.jpg";
 import muaythai from "@/assets/muaythai.jpg";
 import { Dumbbell, Shield, Swords, Flame } from "lucide-react";

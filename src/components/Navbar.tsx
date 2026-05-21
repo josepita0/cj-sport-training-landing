@@ -4,7 +4,7 @@ const links = [
   { label: "Disciplinas", href: "#disciplinas" },
   { label: "Nosotros", href: "#nosotros" },
   { label: "Galería", href: "#galeria" },
-  { label: "Testimonios", href: "#testimonios" },
+  // { label: "Testimonios", href: "#testimonios" },
 ];
 
 export function Navbar() {

@@ -36,7 +36,7 @@ function Index() {
       <Disciplines />
       <WhyUs />
       <Gallery />
-      <Testimonials />
+      {/* <Testimonials /> */}
       <FinalCta />
       <Footer />
     </main>

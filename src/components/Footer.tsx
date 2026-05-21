@@ -18,7 +18,7 @@ export function Footer() {
               MMA y Muay Thai.
             </p>
             <div className="flex gap-3 mt-6">
-              {[Instagram, Facebook, Youtube, MessageCircle].map((Icon, i) => (
+              {[Instagram, MessageCircle].map((Icon, i) => (
                 <a
                   key={i}
                   href="#"
@@ -34,9 +34,9 @@ export function Footer() {
           <div>
             <h4 className="font-display text-lg uppercase tracking-widest mb-4">Visítanos</h4>
             <ul className="space-y-2 text-muted-foreground text-sm">
-              <li>Av. Principal 1234</li>
-              <li>Lun – Vie · 6:00 – 22:00</li>
-              <li>Sáb · 8:00 – 14:00</li>
+              <li>CJ SPORT TRAINING, Avinguda Prevere Conrado Poveda, 2, 03610 Petrer, Alicante</li>
+              {/* <li>Lun – Vie · 6:00 – 22:00</li>
+              <li>Sáb · 8:00 – 14:00</li> */}
             </ul>
           </div>
 
@@ -44,8 +44,8 @@ export function Footer() {
             <h4 className="font-display text-lg uppercase tracking-widest mb-4">Contacto</h4>
             <ul className="space-y-2 text-muted-foreground text-sm">
               <li>WhatsApp · +00 000 000 000</li>
-              <li>info@cjsporttraining.com</li>
-              <li>@cjsporttraining</li>
+              {/* <li>info@cjsporttraining.com</li>
+              <li>@cjsporttraining</li> */}
             </ul>
           </div>
         </div>

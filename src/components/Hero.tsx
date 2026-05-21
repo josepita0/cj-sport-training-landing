@@ -52,7 +52,7 @@ export function Hero() {
             </a>
           </div>
 
-          <div className="mt-16 grid grid-cols-3 gap-8 max-w-lg">
+          {/* <div className="mt-16 grid grid-cols-3 gap-8 max-w-lg">
             {[
               { n: "+800", l: "Atletas activos" },
               { n: "12", l: "Coaches elite" },
@@ -65,7 +65,7 @@ export function Hero() {
                 </div>
               </div>
             ))}
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

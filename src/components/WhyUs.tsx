@@ -1,12 +1,12 @@
 import { Award, Wrench, Flame, ClipboardList, Users, Clock } from "lucide-react";
 
 const features = [
-  { Icon: Award, title: "Coaches certificados", desc: "Equipo de entrenadores con experiencia internacional en alto rendimiento." },
-  { Icon: Wrench, title: "Equipamiento profesional", desc: "Tecnología de punta, instalaciones diseñadas para atletas serios." },
+  { Icon: Award, title: "Coaches experimentados", desc: "Equipo de entrenadores con experiencia internacional en alto rendimiento." },
+  { Icon: Wrench, title: "Equipamiento profesional", desc: "Instalaciones diseñadas para atletas serios." },
   { Icon: Flame, title: "Ambiente motivador", desc: "Energía y disciplina. Una comunidad que empuja, no que se conforma." },
   { Icon: ClipboardList, title: "Planes personalizados", desc: "Evaluación inicial y programación adaptada a tu nivel y objetivos." },
   { Icon: Users, title: "Comunidad competitiva", desc: "Atletas reales, eventos internos y cultura de superación constante." },
-  { Icon: Clock, title: "Horarios flexibles", desc: "Más de 60 clases por semana. Entrena cuando tu rutina lo permita." },
+  { Icon: Clock, title: "Horarios flexibles", desc: " Entrena cuando tu rutina lo permita." },
 ];
 
 export function WhyUs() {
