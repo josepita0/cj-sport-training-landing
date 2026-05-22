@@ -1,4 +1,6 @@
+import { MobileAutoCarousel } from "@/components/MobileAutoCarousel";
 import { Award, Wrench, Flame, ClipboardList, Users, Clock } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 
 const features = [
   { Icon: Award, title: "Coaches experimentados", desc: "Equipo de entrenadores con experiencia internacional en alto rendimiento." },
@@ -8,6 +10,20 @@ const features = [
   { Icon: Users, title: "Comunidad competitiva", desc: "Atletas reales, eventos internos y cultura de superación constante." },
   { Icon: Clock, title: "Horarios flexibles", desc: " Entrena cuando tu rutina lo permita." },
 ];
+
+type FeatureItem = (typeof features)[number];
+
+function FeatureCard({ Icon, title, desc }: { Icon: LucideIcon; title: string; desc: string }) {
+  return (
+    <div className="group bg-background p-10 hover:bg-card transition-colors h-full rounded-2xl md:rounded-none">
+      <div className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10 text-primary mb-6 group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+        <Icon className="h-6 w-6" />
+      </div>
+      <h3 className="font-display text-2xl uppercase tracking-wider">{title}</h3>
+      <p className="mt-3 text-muted-foreground">{desc}</p>
+    </div>
+  );
+}
 
 export function WhyUs() {
   return (
@@ -23,18 +39,15 @@ export function WhyUs() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-border rounded-3xl overflow-hidden">
-          {features.map(({ Icon, title, desc }) => (
-            <div
-              key={title}
-              className="group bg-background p-10 hover:bg-card transition-colors"
-            >
-              <div className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10 text-primary mb-6 group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
-                <Icon className="h-6 w-6" />
-              </div>
-              <h3 className="font-display text-2xl uppercase tracking-wider">{title}</h3>
-              <p className="mt-3 text-muted-foreground">{desc}</p>
-            </div>
+        <MobileAutoCarousel
+          items={features}
+          getKey={(item) => item.title}
+          renderSlide={(item: FeatureItem) => <FeatureCard {...item} />}
+        />
+
+        <div className="hidden md:grid grid-cols-2 lg:grid-cols-3 gap-px bg-border rounded-3xl overflow-hidden">
+          {features.map((feature) => (
+            <FeatureCard key={feature.title} {...feature} />
           ))}
         </div>
       </div>

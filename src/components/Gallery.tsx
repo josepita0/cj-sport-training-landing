@@ -1,8 +1,26 @@
 import g1 from "@/assets/g1.jpg";
-import g2 from "@/assets/g2.jpg";
-import g3 from "@/assets/g3.jpg";
 import g4 from "@/assets/g4.jpg";
 import hero from "@/assets/hero.jpg";
+import { MobileAutoCarousel } from "@/components/MobileAutoCarousel";
+
+const galleryItems = [
+  { src: g1, alt: "Pull ups" },
+  { src: hero, alt: "Battle ropes" },
+  { src: g4, alt: "Group class" },
+];
+
+function GallerySlide({ src, alt }: { src: string; alt: string }) {
+  return (
+    <div className="group overflow-hidden rounded-2xl aspect-[4/3]">
+      <img
+        src={src}
+        alt={alt}
+        loading="lazy"
+        className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-700"
+      />
+    </div>
+  );
+}
 
 export function Gallery() {
   return (
@@ -20,7 +38,13 @@ export function Gallery() {
           </p>
         </div>
 
-        <div className="grid grid-cols-12 gap-4 auto-rows-[140px]">
+        <MobileAutoCarousel
+          items={galleryItems}
+          getKey={(item) => item.alt}
+          renderSlide={(item) => <GallerySlide {...item} />}
+        />
+
+        <div className="hidden md:grid grid-cols-12 gap-4 auto-rows-[140px]">
           <div className="col-span-6 row-span-3 group overflow-hidden rounded-2xl">
             <img src={g1} alt="Pull ups" loading="lazy" className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-700" />
           </div>
