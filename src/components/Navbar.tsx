@@ -1,4 +1,5 @@
 import logo from "@/assets/logo.png";
+import { Button } from "./ui/button";
 
 const links = [
   { label: "Disciplinas", href: "#disciplinas" },
@@ -8,6 +9,16 @@ const links = [
 ];
 
 export function Navbar() {
+  const redirectSession = import.meta.env.VITE_REDIRECT_SESSION;
+
+  const handleRedirectSession = () => {
+    if (redirectSession) {
+      window.location.href = redirectSession;
+    } else {
+      console.error("VITE_REDIRECT_SESSION is not set");
+    }
+  };
+
   return (
     <header className="fixed top-0 inset-x-0 z-50">
       <div className="mx-auto max-w-7xl px-6 mt-4">
@@ -27,12 +38,14 @@ export function Navbar() {
               </li>
             ))}
           </ul>
-          <a
-            href="#cta"
+          <Button
+            // href="#cta"
             className="rounded-full bg-primary px-5 py-2 text-sm font-semibold text-primary-foreground hover:glow transition-shadow"
+            onClick={handleRedirectSession}
+            type="button"
           >
-            Clase Gratis
-          </a>
+            Iniciar Sesión
+          </Button>
         </nav>
       </div>
     </header>
